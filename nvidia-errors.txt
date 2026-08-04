@@ -1,0 +1,48 @@
+Setting up linux-modules-nvidia-580-7.0.0-28-generic (7.0.0-28.28~24.04.1+3) ...
+linux-image-nvidia-7.0.0-28-generic: constructing .ko files
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+./BUILD: 4: /usr/src/linux-headers-7.0.0-28-generic/tools/objtool/objtool: not found
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+./BUILD: 5: /usr/src/linux-headers-7.0.0-28-generic/tools/objtool/objtool: not found
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+./BUILD: 6: /usr/src/linux-headers-7.0.0-28-generic/tools/objtool/objtool: not found
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+./BUILD: 7: /usr/src/linux-headers-7.0.0-28-generic/tools/objtool/objtool: not found
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+/usr/bin/ld.bfd: warning: --package-metadata is empty, ignoring
+./BUILD: 10: /usr/src/linux-headers-7.0.0-28-generic/tools/objtool/objtool: not found
+/usr/bin/ld.bfd: cannot open linker script file /usr/src/linux-headers-7.0.0-28-generic/scripts/module.lds: No such file or directory
+/usr/bin/ld.bfd: cannot open linker script file /usr/src/linux-headers-7.0.0-28-generic/scripts/module.lds: No such file or directory
+/usr/bin/ld.bfd: cannot open linker script file /usr/src/linux-headers-7.0.0-28-generic/scripts/module.lds: No such file or directory
+/usr/bin/ld.bfd: cannot open linker script file /usr/src/linux-headers-7.0.0-28-generic/scripts/module.lds: No such file or directory
+/usr/bin/ld.bfd: cannot open linker script file /usr/src/linux-headers-7.0.0-28-generic/scripts/module.lds: No such file or directory
+sha256sum: nvidia-drm.ko: No such file or directory
+nvidia-drm.ko: FAILED open or read
+sha256sum: nvidia-modeset.ko: No such file or directory
+nvidia-modeset.ko: FAILED open or read
+sha256sum: nvidia-peermem.ko: No such file or directory
+nvidia-peermem.ko: FAILED open or read
+sha256sum: nvidia-uvm.ko: No such file or directory
+nvidia-uvm.ko: FAILED open or read
+sha256sum: nvidia.ko: No such file or directory
+nvidia.ko: FAILED open or read
+sha256sum: WARNING: 5 listed files could not be read
+dpkg: error processing package linux-modules-nvidia-580-7.0.0-28-generic (--configure):
+ installed linux-modules-nvidia-580-7.0.0-28-generic package post-installation script subprocess returned error exit status 1
+dpkg: dependency problems prevent configuration of linux-modules-nvidia-580-generic-hwe-24.04:
+ linux-modules-nvidia-580-generic-hwe-24.04 depends on linux-modules-nvidia-580-7.0.0-28-generic (= 7.0.0-28.28~24.04.1+3); however:
+  Package linux-modules-nvidia-580-7.0.0-28-generic is not configured yet.
+
+dpkg: error processing package linux-modules-nvidia-580-generic-hwe-24.04 (--configure):
+ dependency problems - leaving unconfigured
+dpkg: dependency problems prevent configuration of linux-modules-nvidia-570-generic-hwe-24.04:
+ linux-modules-nvidia-570-generic-hwe-24.04 depends on linux-modules-nvidia-580-generic-hwe-24.04; however:
+  Package linux-modules-nvidia-580-generic-hwe-24.04 is not configured yet.
+
+dpkg: error processing package linux-modules-nvidia-570-generic-hwe-24.04 (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ linux-modules-nvidia-580-7.0.0-28-generic
+ linux-modules-nvidia-580-generic-hwe-24.04
+ linux-modules-nvidia-570-generic-hwe-24.04
