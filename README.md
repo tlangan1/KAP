@@ -1,10 +1,16 @@
 <h1 align="center">Knowledge Acquisition Process (KNAP) Application</h1>
 
+## Application
+
+- This application is designed track my knowledge acquisition efforts in the form of trees whose nodes represent specific types of knowledge. The goal is to be able to enter data to represent these "nodes" of knowledge and "directed edges" that represent how the acquisition of one type of knowledge led to another knowledge acquisition effort. Finally, I would like to be able to view these graphs in a visually appealing way.
+- I need an app that can run without a data server as well as one that can. One version should use IndexedDB to store the data and another should use middleware that stores the data in a relational database. The core of the app should be architected so that it is indifferent to the source of the data.
+- Example: I want to be able to create a PDE, personalized development environment, using Neovim. This leads to to needing to understand Neovim better. This also leads me to needing to understand how to install plugins in Neovim which leads me to needing to understand Lazy.nvim.
+
 ## Architecture
 
 - React version 19 + TypeScript: Framework
 - [React Hook Forms](https://react-hook-form.com/): Forms helper in React
-- [TanStack](https://tanstack.com/): Specifically TanStack Query a data access helper for frameworks such as React.
+- [TanStack](https://tanstack.com/): Specifically TanStack Query a data access helper for frameworks such as React.is
 - [axios](https://github.com/axios/axios): A fetch wrapper that integrates well with TanStack Query.
 - [d3js](https://d3js.org/): Visualization Tool recommended by Copilot to visualize the data
 
