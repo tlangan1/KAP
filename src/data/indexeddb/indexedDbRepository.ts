@@ -6,9 +6,9 @@ import type {
   NewKnowledgeEdgeInput,
   NewKnowledgeNodeInput,
 } from "../types";
-import type { KnapRepository } from "../KnapRepository";
+import type { KatRepository } from "../KatRepository";
 
-const DB_NAME = "knap-db";
+const DB_NAME = "kat-db";
 const DB_VERSION = 1;
 const NODES_STORE = "nodes";
 const EDGES_STORE = "edges";
@@ -85,7 +85,7 @@ async function withDatabase<T>(
   }
 }
 
-export const indexedDbRepository: KnapRepository = {
+export const indexedDbRepository: KatRepository = {
   async getGraph(): Promise<KnowledgeGraph> {
     return withDatabase(async (db) => {
       const [nodes, edges] = await Promise.all([

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import KnapForm from "./Knapform";
+import KatForm from "./Katform";
 import { repository } from "./data/repository";
 import { DEFAULT_GRAPH } from "./data/types";
 import type { KnowledgeFormValues } from "./data/types";
@@ -80,8 +80,8 @@ function App() {
     <div className="app-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Knowledge acquisition process</p>
-          <h1>KNAP</h1>
+          <p className="eyebrow">Knowledge acquisition tracking</p>
+          <h1>KAT</h1>
         </div>
         <div className="status-pill">{graph.nodes.length} nodes</div>
       </header>
@@ -89,7 +89,7 @@ function App() {
       <main className="app-layout">
         <section className="panel form-panel">
           <h2>Add a knowledge node</h2>
-          <KnapForm onSubmitNode={handleAddNode} />
+          <KatForm onSubmitNode={handleAddNode} />
 
           <div className="relationship-panel">
             <h3>Connect learning steps</h3>
@@ -183,35 +183,6 @@ function App() {
                 </marker>
               </defs>
 
-              {graph.edges.map((edge) => {
-                const source = positions[edge.source];
-                const target = positions[edge.target];
-
-                if (!source || !target) {
-                  return null;
-                }
-
-                const midX = (source.x + target.x) / 2;
-                const midY = (source.y + target.y) / 2 - 18;
-
-                return (
-                  <g key={edge.id}>
-                    <line
-                      x1={source.x + 110}
-                      y1={source.y + 40}
-                      x2={target.x + 110}
-                      y2={target.y + 40}
-                      stroke="#8ac7ff"
-                      strokeWidth="2.5"
-                      markerEnd="url(#arrowhead)"
-                    />
-                    <text x={midX + 10} y={midY} className="edge-label">
-                      {edge.label}
-                    </text>
-                  </g>
-                );
-              })}
-
               {graph.nodes.map((node) => {
                 const position = positions[node.id];
                 if (!position) {
@@ -237,6 +208,35 @@ function App() {
                     </text>
                     <text x="18" y="75" className="node-description">
                       {node.description}
+                    </text>
+                  </g>
+                );
+              })}
+
+              {graph.edges.map((edge) => {
+                const source = positions[edge.source];
+                const target = positions[edge.target];
+
+                if (!source || !target) {
+                  return null;
+                }
+
+                const midX = (source.x + target.x) / 2;
+                const midY = (source.y + target.y) / 2 - 18;
+
+                return (
+                  <g key={edge.id}>
+                    <line
+                      x1={source.x + 110}
+                      y1={source.y + 40}
+                      x2={target.x + 110}
+                      y2={target.y + 40}
+                      stroke="#8ac7ff"
+                      strokeWidth="2.5"
+                      markerEnd="url(#arrowhead)"
+                    />
+                    <text x={midX + 10} y={midY} className="edge-label">
+                      {edge.label}
                     </text>
                   </g>
                 );
