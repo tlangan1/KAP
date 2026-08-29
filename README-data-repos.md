@@ -22,17 +22,17 @@
 
 - ✅ Data layer refactored — storage-agnostic architecture
 
-- I did not touch the Express server project as instructed. Instead, I built a repository abstraction so the KNAP app core is indifferent to where data comes from, and aligned the REST implementation to that server's existing route conventions.
+- I did not touch the Express server project as instructed. Instead, I built a repository abstraction so the KAT app core is indifferent to where data comes from, and aligned the REST implementation to that server's existing route conventions.
 
 - New structure
 - `types.ts` — shared domain types (`KnowledgeNode`, `KnowledgeEdge`, `KnowledgeGraph`) and the default seed graph
-- `KnapRepository.ts` — the interface the app depends on: `getGraph`, `addNode`, `addEdge`
+- `KatRepository.ts` — the interface the app depends on: `getGraph`, `addNode`, `addEdge`
 - `indexedDbRepository.ts` — serverless mode, persists via the browser's native IndexedDB, self-seeds on first run
 - `restRepository.ts` — talks to your existing server at `/media/.../life-helper-docs-and-apps/express-server` using its `GET /get_items/<type>?params=...` and `POST /add/<type>` conventions
 - `repository.ts` — picks the backend at runtime via `VITE_DATA_BACKEND` (`"indexedDB"` default, or `"rest"`)
 - `vite-env.d.ts` — typed env vars (`VITE_DATA_BACKEND`, `VITE_API_BASE_URL`)
 
-- `App.tsx` and `Knapform.tsx` now depend only on `repository` and the shared types — no `localStorage` or IndexedDB code lives in the component tree anymore.
+- `App.tsx` and `Katform.tsx` now depend only on `repository` and the shared types — no `localStorage` or IndexedDB code lives in the component tree anymore.
 
 #### One thing you'll need to do server-side
 

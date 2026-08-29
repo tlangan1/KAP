@@ -1,4 +1,4 @@
-<h1 align="center">Knowledge Acquisition Process (KNAP) Application</h1>
+<h1 align="center">Knowledge Acquisition Tracking (KAT) Application</h1>
 
 ## Application
 
@@ -9,10 +9,16 @@
 ## Architecture
 
 - React version 19 + TypeScript: Framework
+  - To help TypeScript recognize React's JSX type definitions I installed the React type packages as follows
+    ```
+    npm install -D @types/react @types/react-dom
+    ```
 - [React Hook Forms](https://react-hook-form.com/): Forms helper in React
 - [TanStack](https://tanstack.com/): Specifically TanStack Query a data access helper for frameworks such as React.is
 - [axios](https://github.com/axios/axios): A fetch wrapper that integrates well with TanStack Query.
 - [d3js](https://d3js.org/): Visualization Tool recommended by Copilot to visualize the data
+- [React Flow (@xyflow/react)](???)
+  - The original implementation by Copilot used a roll-your-own svg constructor and that is a very fragile solution.
 
 ## React Hook Forms
 
@@ -145,3 +151,7 @@ export default function App() {
 #### Interceptors
 
 - See [this](https://blog.jobins.jp/axios-interceptors-with-practical-examples). In short, interceptors in axios are hooks to run functions just before a request is sent and right after a response is received.
+
+## React Flow
+
+- Start [here](https://reactflow.dev/learn)

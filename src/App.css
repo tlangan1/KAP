@@ -63,14 +63,14 @@
   color: #f3f8ff;
 }
 
-.knap-form,
+.kat-form,
 .relationship-panel {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.knap-form label,
+.kat-form label,
 .relationship-panel label {
   display: flex;
   flex-direction: column;
@@ -79,9 +79,9 @@
   font-size: 0.96rem;
 }
 
-.knap-form input,
-.knap-form textarea,
-.knap-form select,
+.kat-form input,
+.kat-form textarea,
+.kat-form select,
 .relationship-panel input,
 .relationship-panel select {
   width: 100%;
@@ -96,9 +96,9 @@
     box-shadow 0.2s ease;
 }
 
-.knap-form input:focus,
-.knap-form textarea:focus,
-.knap-form select:focus,
+.kat-form input:focus,
+.kat-form textarea:focus,
+.kat-form select:focus,
 .relationship-panel input:focus,
 .relationship-panel select:focus {
   outline: none;
@@ -106,7 +106,7 @@
   box-shadow: 0 0 0 3px rgba(138, 199, 255, 0.16);
 }
 
-.knap-form textarea {
+.kat-form textarea {
   resize: vertical;
   min-height: 100px;
 }
